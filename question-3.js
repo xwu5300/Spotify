@@ -10,18 +10,18 @@
 // 2¢, 2¢
 
 const changePossibilities = (amount, coins) => {
-  var count = 0;
+  var count = 0
   function inner(amount, i) {
-    var coin = coins[i];
+    var coin = coins[i]
     if (i === 0) {
       if (amount % coin === 0) {
-        count++;
+        count++
       }
       return;
     } else {
       while (amount > 0) {
-        inner(amount, i - 1);
-        amount -= coin;
+        inner(amount, i - 1)
+        amount -= coin
       }
       if (amount === 0) {
         count++

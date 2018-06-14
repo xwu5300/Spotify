@@ -6,22 +6,22 @@
 // For s = "2[b3[a]]", the output should be decodeString(s) = "baaabaaa"
 
 const decodeString = (s) => {
-    let result = '';
-    let count = '';
-    let str = '';
-    let brackets = 0;
+    let result = ''
+    let count = ''
+    let str = ''
+    let brackets = 0
     for (let char of s) {
       if (brackets > 0) {
-        str += char;
+        str += char
       }
       if (char === '[') {
         brackets++
       } else if (char === ']') {
-        brackets--;
+        brackets--
         if (brackets === 0) {
           result += decodeString(str).repeat(count);
-          count = '';
-          str = '';
+          count = ''
+          str = ''
         }
       } else {
         if (brackets === 0) {
@@ -32,5 +32,5 @@ const decodeString = (s) => {
         }
       }
     }
-    return result;
+    return result
 }
